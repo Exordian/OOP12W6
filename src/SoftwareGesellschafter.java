@@ -1,14 +1,11 @@
 
-public class SoftwareGesellschafter implements SoftwareLevel1 {
+public class SoftwareGesellschafter extends SoftwareLevel1 {
 
-	/* FAIL: checking consistent android not required !
-	public void attachToAndroid(Bediener a) {
-		
-	}*/
-
-	@Override
-	public void attachToAndroid(Android a) {
-		a.attachSoftware(this);
+	void attachToBediener(Bediener a) {
+		a.attachSoftwareLevel1(this);
+	}
+	public String toString () {
+		return "SoftwareGesellschafter";
 	}
 
 }

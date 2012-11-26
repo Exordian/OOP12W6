@@ -1,9 +1,11 @@
 
-public class SoftwareHilfskraefte implements SoftwareLevel1, SoftwareLevel2 {
+public class SoftwareHilfskraefte extends SoftwareLevel1 {
 
-	@Override
-	public void attachToAndroid(Android a) {
-		a.attachSoftware(this);
+	void attachToBediener(Bediener a) {
+		a.attachSoftwareLevel1(this);
+	}
+	public String toString () {
+		return "SoftwareHilfskraefte";
 	}
 
 }

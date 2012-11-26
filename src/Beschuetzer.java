@@ -1,28 +1,32 @@
 
 public class Beschuetzer extends Android {
 
-	@Override
-	void attachSoftware(Software software) {
-		// TODO Auto-generated method stub
-		
+	void attachSoftware(SoftwareLeibwaechter s) {
+		s.attachToBeschuetzer(this);
+	}
+	
+	void attachSoftware(SoftwareKaempfer s) {
+		s.attachToBeschuetzer(this);
+	}
+	
+	void attachSoftware(SoftwareObjektbewacher s) {
+		s.attachToBeschuetzer(this);
 	}
 
-	@Override
-	void attachSkin(Skin skin) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void attachSoftwareLevel4(SoftwareLevel4 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel4(this, software);
 
-	@Override
-	void attachAkteur(Akteur akteur) {
-		// TODO Auto-generated method stub
-		
 	}
-
-	@Override
-	void makeSubType(SubType akteur) {
-		// TODO Auto-generated method stub
-		
+	public void attachSoftwareLevel5(SoftwareLevel5 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel5(this, software);
 	}
 
 }

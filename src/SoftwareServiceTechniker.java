@@ -1,9 +1,11 @@
 
-public class SoftwareServiceTechniker implements SoftwareLevel3, SoftwareLevel4 {
+public class SoftwareServiceTechniker extends SoftwareLevel3{
 
-	@Override
-	public void attachToAndroid(Android a) {
-		a.attachSoftware(this);
+	void attachToSchwerarbeiter(Schwerarbeiter a) {
+		a.attachSoftwareLevel3(this);
+	}
+	public String toString () {
+		return "SoftwareServiceTechniker";
 	}
 
 }

@@ -1,27 +1,32 @@
 
 public class Schwerarbeiter extends Android {
 
-	@Override
-	void attachSoftware(Software software) {
-		// TODO Auto-generated method stub
-		
+	void attachSoftware(SoftwareBauarbeiter s) {
+		s.attachToSchwerarbeiter(this);
 	}
 
-	@Override
-	void attachSkin(Skin skin) {
-		// TODO Auto-generated method stub
-		
+	void attachSoftware(SoftwareServiceTechniker s) {
+		s.attachToSchwerarbeiter(this);
 	}
 
-	@Override
-	void attachAkteur(Akteur akteur) {
-		// TODO Auto-generated method stub
-		
+	void attachSoftware(SoftwareTransportarbeiter s) {
+		s.attachToSchwerarbeiter(this);
 	}
 
-	@Override
-	void makeSubType(SubType akteur) {
-		// TODO Auto-generated method stub
+	public void attachSoftwareLevel3(SoftwareLevel3 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel3(this, software);
+
+	}
+	public void attachSoftwareLevel4(SoftwareLevel4 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel4(this, software);
 		
 	}
 

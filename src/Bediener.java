@@ -1,27 +1,31 @@
 
 public class Bediener extends Android {
-
-	@Override
-	void attachSoftware(Software software) {
-		// TODO Auto-generated method stub
-		
+	
+	void attachSoftware(SoftwareHilfskraefte s) {
+		s.attachToBediener(this);
+	}
+	
+	void attachSoftware(SoftwareGesellschafter s) {
+		s.attachToBediener(this);
 	}
 
-	@Override
-	void attachSkin(Skin skin) {
-		// TODO Auto-generated method stub
-		
+	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensiv skin) {
+		skin.attachToBediener(this);
 	}
-
-	@Override
-	void attachAkteur(Akteur akteur) {
-		// TODO Auto-generated method stub
-		
+	
+	public void attachSoftwareLevel1(SoftwareLevel1 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel1(this, software);
 	}
-
-	@Override
-	void makeSubType(SubType akteur) {
-		// TODO Auto-generated method stub
+	public void attachSoftwareLevel2(SoftwareLevel2 software) {
+		if(this.software == null) {
+			addToLog("Software set to: " + software.toString());
+			this.software = software;
+		} else
+			this.software.checkLevel2(this, software);
 		
 	}
 

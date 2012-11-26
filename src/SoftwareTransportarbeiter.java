@@ -1,10 +1,11 @@
 
-public class SoftwareTransportarbeiter implements SoftwareLevel3,
-		SoftwareLevel4 {
+public class SoftwareTransportarbeiter extends SoftwareLevel4 {
 
-	@Override
-	public void attachToAndroid(Android a) {
-		a.attachSoftware(this);
+	void attachToSchwerarbeiter(Schwerarbeiter a) {
+		a.attachSoftwareLevel4(this);
+	}
+	public String toString () {
+		return "SoftwareTransportarbeiter";
 	}
 
 }
