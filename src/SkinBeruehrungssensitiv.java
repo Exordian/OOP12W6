@@ -1,5 +1,12 @@
 
-public class SkinBeruehrungssensiv extends Skin {
+/**
+ *
+ * @author Englisch (e1125164), Lenz (e1126963), Schuster (e1025700) 
+ * @since November 2012
+ * 
+ */
+public class SkinBeruehrungssensitiv extends Skin {
+		
 	@Override
 	void attachToBediener(Bediener a) {
 		a.attachAfterCheck(this);
@@ -14,6 +21,6 @@ public class SkinBeruehrungssensiv extends Skin {
 	}
 	
 	public String toString () {
-		return "SkinBeruehrungssensiv";
+		return "SkinBeruehrungssensitiv";
 	}
 }

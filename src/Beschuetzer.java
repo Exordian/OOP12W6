@@ -1,14 +1,20 @@
 
+/**
+ *
+ * @author Englisch (e1125164), Lenz (e1126963), Schuster (e1025700) 
+ * @since November 2012
+ * 
+ */
 public class Beschuetzer extends Android {
 
 	void attachSoftware(SoftwareLeibwaechter s) {
 		s.attachToBeschuetzer(this);
 	}
-	
+
 	void attachSoftware(SoftwareKaempfer s) {
 		s.attachToBeschuetzer(this);
 	}
-	
+
 	void attachSoftware(SoftwareObjektbewacher s) {
 		s.attachToBeschuetzer(this);
 	}
@@ -27,6 +33,10 @@ public class Beschuetzer extends Android {
 			this.software = software;
 		} else
 			this.software.checkLevel5(this, software);
+	}
+
+	public void attachSkinGepanzert(SkinGepanzert skin) {
+		skin.attachToBeschuetzer(this); 
 	}
 
 }

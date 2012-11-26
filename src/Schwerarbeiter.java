@@ -1,4 +1,10 @@
 
+/**
+ *
+ * @author Englisch (e1125164), Lenz (e1126963), Schuster (e1025700) 
+ * @since November 2012
+ * 
+ */
 public class Schwerarbeiter extends Android {
 
 	void attachSoftware(SoftwareBauarbeiter s) {
@@ -21,6 +27,7 @@ public class Schwerarbeiter extends Android {
 			this.software.checkLevel3(this, software);
 
 	}
+	
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString());
@@ -28,6 +35,18 @@ public class Schwerarbeiter extends Android {
 		} else
 			this.software.checkLevel4(this, software);
 		
+	}
+	
+	public void attachSkinGepanzert(SkinGepanzert skin) {
+		skin.attachToSchwerarbeiter(this); 
+	}
+	
+	public void attachSkinHochfest(SkinGepanzert skin) {
+		skin.attachToSchwerarbeiter(this); 
+	}
+	
+	public void attachSkinBeruehrungssensiv(SkinGepanzert skin) {
+		skin.attachToSchwerarbeiter(this); 
 	}
 
 }
