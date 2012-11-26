@@ -6,7 +6,7 @@
  * 
  */
 public class SoftwareKaempfer extends SoftwareLevel5 {
-
+	@Override	
 	void attachToBeschuetzer(Beschuetzer a) {
 		a.attachSoftwareLevel5(this);
 	}

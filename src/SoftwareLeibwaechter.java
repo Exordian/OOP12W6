@@ -6,7 +6,7 @@
  * 
  */
 public class SoftwareLeibwaechter extends SoftwareLevel4 {
-
+	@Override	
 	void attachToBeschuetzer(Beschuetzer a) {
 		a.attachSoftwareLevel4(this);
 	}

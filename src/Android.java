@@ -18,9 +18,9 @@ public abstract class Android {
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {}
 	public void attachSoftwareLevel5(SoftwareLevel5 software) {}
 
-	public void attachSkinGepanzert(SkinGepanzert skin, Integer snr) {}
-	public void attachSkinHochfest(SkinHochfest skin, Integer snr) {}
-	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin, Integer snr) {}
+	public void attachSkinGepanzert(SkinGepanzert skin) {}
+	public void attachSkinHochfest(SkinHochfest skin) {}
+	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {}
 
 	public Android() {
 		this.snr = ++cSnr;
@@ -41,36 +41,42 @@ public abstract class Android {
 
 	public void attachAfterCheck(SoftwareLevel1 s) {
 		this.software = s;
+		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
 		// set power here
 	}
 
 	public void attachAfterCheck(SoftwareLevel2 s) {
 		this.software = s;
+		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
 		// set power here
 	}
 
 	public void attachAfterCheck(SoftwareLevel3 s) {
 		this.software = s;
+		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
 		// set power here
 	}
 
 	public void attachAfterCheck(SoftwareLevel4 s) {
 		this.software = s;
+		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
 		// set power here
 	}
 
 	public void attachAfterCheck(SoftwareLevel5 s) {
 		this.software = s;
+		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
 		// set power here
 	}
 
 	public void attachAfterCheck(Skin s) {
 		this.skin = s;
+		s.setSnr(snr);
 		addToLog("Changed Skin to: " + s.toString());
 	}
 }

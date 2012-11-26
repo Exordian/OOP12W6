@@ -18,7 +18,7 @@ public class Beschuetzer extends Android {
 	void attachSoftware(SoftwareObjektbewacher s) {
 		s.attachToBeschuetzer(this);
 	}
-
+	@Override	
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString());
@@ -27,6 +27,7 @@ public class Beschuetzer extends Android {
 			this.software.checkLevel4(this, software);
 
 	}
+	@Override
 	public void attachSoftwareLevel5(SoftwareLevel5 software) {
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString());
@@ -34,7 +35,7 @@ public class Beschuetzer extends Android {
 		} else
 			this.software.checkLevel5(this, software);
 	}
-
+	@Override
 	public void attachSkinGepanzert(SkinGepanzert skin) {
 		skin.attachToBeschuetzer(this); 
 	}

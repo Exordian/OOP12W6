@@ -5,7 +5,7 @@
  * @since November 2012
  * 
  */
-public abstract class Skin {
+public abstract class Skin extends AndroidPart {
 	void attachToBediener(Bediener a) {}
 	void attachToBeschuetzer(Beschuetzer a) {}
 	void attachToSchwerarbeiter(Schwerarbeiter a) {}

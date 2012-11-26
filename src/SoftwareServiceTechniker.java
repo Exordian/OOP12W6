@@ -6,7 +6,7 @@
  * 
  */
 public class SoftwareServiceTechniker extends SoftwareLevel3{
-
+	@Override	
 	void attachToSchwerarbeiter(Schwerarbeiter a) {
 		a.attachSoftwareLevel3(this);
 	}

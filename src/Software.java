@@ -5,7 +5,7 @@
  * @since November 2012
  * 
  */
-public class Software {
+public class Software extends AndroidPart {
 	void attachToBediener(Bediener a) {}
 	void attachToBeschuetzer(Beschuetzer a) {}
 	void attachToSchwerarbeiter(Schwerarbeiter a) {}

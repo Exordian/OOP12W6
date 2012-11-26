@@ -19,6 +19,7 @@ public class Schwerarbeiter extends Android {
 		s.attachToSchwerarbeiter(this);
 	}
 
+	@Override
 	public void attachSoftwareLevel3(SoftwareLevel3 software) {
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString());
@@ -27,7 +28,7 @@ public class Schwerarbeiter extends Android {
 			this.software.checkLevel3(this, software);
 
 	}
-	
+	@Override
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString());
@@ -36,16 +37,16 @@ public class Schwerarbeiter extends Android {
 			this.software.checkLevel4(this, software);
 		
 	}
-	
+	@Override
 	public void attachSkinGepanzert(SkinGepanzert skin) {
 		skin.attachToSchwerarbeiter(this); 
 	}
-	
-	public void attachSkinHochfest(SkinGepanzert skin) {
+	@Override
+	public void attachSkinHochfest(SkinHochfest skin) {
 		skin.attachToSchwerarbeiter(this); 
 	}
-	
-	public void attachSkinBeruehrungssensiv(SkinGepanzert skin) {
+	@Override	
+	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {
 		skin.attachToSchwerarbeiter(this); 
 	}
 

@@ -6,6 +6,7 @@
  * 
  */
 public class SoftwareLevel2 extends Software {
+	@Override	
 	void checkLevel2(Android a, SoftwareLevel2 s) {
 		a.attachAfterCheck(s);
 	}
