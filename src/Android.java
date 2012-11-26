@@ -11,6 +11,7 @@ public abstract class Android {
 	private String log;
 	protected Software software = null;
 	protected Skin skin = null;
+	protected int maxKW;
 
 	public void attachSoftwareLevel1(SoftwareLevel1 software) {}
 	public void attachSoftwareLevel2(SoftwareLevel2 software) {}
@@ -43,35 +44,34 @@ public abstract class Android {
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
-		// set power here
+		this.maxKW = 1;
 	}
 
 	public void attachAfterCheck(SoftwareLevel2 s) {
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
-		// set power here
+		this.maxKW = 1;
 	}
 
 	public void attachAfterCheck(SoftwareLevel3 s) {
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
-		// set power here
+		this.maxKW = 5; 
 	}
 
 	public void attachAfterCheck(SoftwareLevel4 s) {
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
-		// set power here
+		this.maxKW = 10;
 	}
 
 	public void attachAfterCheck(SoftwareLevel5 s) {
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString());
-		// set power here
 	}
 
 	public void attachAfterCheck(Skin s) {

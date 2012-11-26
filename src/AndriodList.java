@@ -9,12 +9,16 @@ import java.util.TreeMap;
 public class AndriodList extends TreeMap<Integer, Android> {
 	
 	public void insert(Android a) {
-		// Check contains
+		if(a == null) return;
+		
+		for (Integer key : this.keySet())
+			if (this.get(key) == null)
+				return;
+		
 		this.put(a.getSnr(), a);
 	}
 	
 	public Android find(Integer i) {
 		return this.get(i);
 	}
-	
 }

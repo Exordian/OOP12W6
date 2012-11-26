@@ -5,7 +5,7 @@
  * @since November 2012
  * 
  */
-public class Kit {
+public class Kit extends AndroidPart {
 	private final int kW;
 	
 	public Kit(int kW) {
