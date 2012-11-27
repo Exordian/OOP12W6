@@ -5,17 +5,9 @@
  * @since November 2012
  * 
  */
-public class Kit {
-	private final int kW;
-	
-	public Kit(int kW) {
-		//kW >= 0;
-		//kW cannot be changed after initializing;
-		this.kW = kW;
-	}
-	
-	public int getKW() {
-		return this.kW;
-		//returns kilowatts kW
-	}
+public abstract class Kit extends AndroidPart {
+	void attachKitBelow1kW(Android a) {};
+	void attachKitBelow5kW(Android a) {};
+	void attachKitBelow10kW(Android a) {};
+	void attachKitUnlimited(Android a) {};
 }

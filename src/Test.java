@@ -16,10 +16,14 @@ public class Test {
 	// Subtype vom Android wird implizit über die Software gegeben !
 	public static void main(String[] args) {
 		Beschuetzer b = new Beschuetzer();
-		b.attachSoftware(new SoftwareLeibwaechter());
-		b.attachSoftware(new SoftwareObjektbewacher());
 		b.attachSoftware(new SoftwareKaempfer());
-
+		b.attachKit(new SuperSoaker3000());
+		System.out.println(b.getLog());
+		Bediener a = new Bediener();
+		a.attachSoftware(new SoftwareGesellschafter());
+		a.attachKit(new SuperSoaker3000());
+		// can not attach overpowered soak kit to "gesellschafter"
+		System.out.println(a.getLog());
 	}
 
 }

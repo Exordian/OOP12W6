@@ -10,7 +10,6 @@ public class AndriodList extends TreeMap<Integer, Android> {
 	
 	public void insert(Android a) {
 		//a != null;
-		// Check contains
 		this.put(a.getSnr(), a);
 		//android has been added to androidlist
 	}

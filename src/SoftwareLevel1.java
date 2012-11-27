@@ -20,4 +20,8 @@ public class SoftwareLevel1 extends Software {
 		//returns a string of type of software level
 	}
 
+	void attachKit(KitBelow1kW kit, Android a) {
+		a.attachAfterCheck(kit);
+	}
+
 }

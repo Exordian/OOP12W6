@@ -13,12 +13,35 @@ public abstract class Android {
 	private String log;
 	protected Software software = null;
 	protected Skin skin = null;
+	protected Kit kit = null;
 
 	public void attachSoftwareLevel1(SoftwareLevel1 software) {}
 	public void attachSoftwareLevel2(SoftwareLevel2 software) {}
 	public void attachSoftwareLevel3(SoftwareLevel3 software) {}
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {}
 	public void attachSoftwareLevel5(SoftwareLevel5 software) {}
+
+	// ask software if kit is legit
+	public void attachKit(KitBelow1kW kit) {
+		if(kit == null || software == null)
+			return;
+		software.attachKit(kit, this);
+	}
+	public void attachKit(KitBelow5kW kit) {
+		if(kit == null || software == null)
+			return;
+		software.attachKit(kit, this);
+	}
+	public void attachKit(KitBelow10kW kit) {
+		if(kit == null || software == null)
+			return;
+		software.attachKit(kit, this);
+	}
+	public void attachKit(KitUnlimited kit) {
+		if(kit == null || software == null)
+			return;
+		software.attachKit(kit, this);
+	}
 
 	public void attachSkinGepanzert(SkinGepanzert skin) {}
 	public void attachSkinHochfest(SkinHochfest skin) {}
@@ -46,51 +69,19 @@ public abstract class Android {
 		//returns serial number
 	}
 
-	public void attachAfterCheck(SoftwareLevel1 s) {
+	public void attachAfterCheck(Software s) {
 		//s != null;
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString()); //add logentry
-		// set power here
-		
 		//software got changed
 	}
 
-	public void attachAfterCheck(SoftwareLevel2 s) {
+	public void attachAfterCheck(Kit k) {
 		//s != null;
-		this.software = s;
-		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString()); //add logentry
-		// set power here
-		
-		//software got changed
-	}
-
-	public void attachAfterCheck(SoftwareLevel3 s) {
-		//s != null;
-		this.software = s;
-		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString()); //add logentry
-		// set power here
-		
-		//software got changed
-	}
-
-	public void attachAfterCheck(SoftwareLevel4 s) {
-		//s != null;
-		this.software = s;
-		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString()); //add logentry
-		// set power here
-		
-		//software got changed
-	}
-
-	public void attachAfterCheck(SoftwareLevel5 s) {
-		//s != null;
-		this.software = s;
-		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString()); //add logentry
+		this.kit = k;
+		k.setSnr(snr);
+		addToLog("Kit attached: " + k.toString()); //add logentry
 		// set power here
 		
 		//software got changed

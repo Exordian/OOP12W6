@@ -18,4 +18,20 @@ public class SoftwareLevel5 extends Software {
 		//returns a string of type of software level
 	}
 
+	void attachKit(KitBelow1kW kit, Android a) {
+		a.attachAfterCheck(kit);
+	}
+
+	void attachKit(KitBelow5kW kit, Android a) {
+		a.attachAfterCheck(kit);
+	}
+
+	void attachKit(KitBelow10kW kit, Android a) {
+		a.attachAfterCheck(kit);
+	}
+
+	void attachKit(KitUnlimited kit, Android a) {
+		a.attachAfterCheck(kit);
+	}
+
 }
