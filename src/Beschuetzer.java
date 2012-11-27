@@ -59,10 +59,25 @@ public class Beschuetzer extends Android {
 	
 	@Override
 	public void attachSkinGepanzert(SkinGepanzert skin) {
-		//Beschützer must have an armored skin;
+		//only Beschützer has an armored skin;
 		//skin != null;
 		skin.attachToBeschuetzer(this); 
 		//armored skin has been attached to Beschützer
 	}
+	
+	@Override
+	public void attachSkinHochfest(SkinHochfest skin) {
+		//skin != null;
+		skin.attachToBeschuetzer(this);
+		//high-strength skin has been attached to Beschützer
+	}
+	
+	@Override
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {
+		//skin != null;
+		skin.attachToBeschuetzer(this);
+		//touch-sensitive skin has been attached to Beschützer;
+	}
+
 
 }

@@ -6,8 +6,8 @@
  * 
  */
 public abstract class Android {
-	//subtype of android is implicitly given by software;
-	
+	//the subtype of android is implicitly given by software;
+
 	private static Integer cSnr = 0;
 	protected final Integer snr;
 	private String log;
@@ -26,26 +26,30 @@ public abstract class Android {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
+		//attached kit to software
 	}
 	public void attachKit(KitBelow5kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
+		//attached kit to software
 	}
 	public void attachKit(KitBelow10kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
+		//attached kit to software
 	}
 	public void attachKit(KitUnlimited kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
+		//attached kit to software
 	}
 
 	public void attachSkinGepanzert(SkinGepanzert skin) {}
 	public void attachSkinHochfest(SkinHochfest skin) {}
-	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {}
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {}
 
 	public Android() {
 		//snr cannot be changed after initializing;
@@ -61,12 +65,27 @@ public abstract class Android {
 
 	public String getLog() {
 		return log;
-		//returns log
+		//returns the log of this android
 	}
 
 	public Integer getSnr() {
 		return snr;
-		//returns serial number
+		//returns serial number of this android
+	}
+
+	public Kit getKit() {
+		return this.kit;
+		//returns the kit of this android
+	}
+
+	public Skin getSkin() {
+		return this.skin;
+		//returns the skin of this android
+	}
+
+	public Software getSoftware() {
+		return this.software;
+		//returns the software of this android
 	}
 
 	public void attachAfterCheck(Software s) {
@@ -83,7 +102,7 @@ public abstract class Android {
 		k.setSnr(snr);
 		addToLog("Kit attached: " + k.toString()); //add logentry
 		// set power here
-		
+
 		//software got changed
 	}
 

@@ -54,14 +54,7 @@ public class Schwerarbeiter extends Android {
 			//software has been changed
 		
 	}
-	
-	@Override
-	public void attachSkinGepanzert(SkinGepanzert skin) {
-		//skin != null;
-		skin.attachToSchwerarbeiter(this); 
-		//armored skin has been attached to Schwerarbeiter
-	}
-	
+		
 	@Override
 	public void attachSkinHochfest(SkinHochfest skin) {
 		//skin != null;
@@ -70,7 +63,7 @@ public class Schwerarbeiter extends Android {
 	}
 	
 	@Override	
-	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {
 		//skin != null;
 		skin.attachToSchwerarbeiter(this); 
 		//touch-sensitive skin has been attached to Schwerarbeiter

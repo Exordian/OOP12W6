@@ -7,7 +7,7 @@
  */
 public class Bediener extends Android {
 	//Bediener only can have software level of either 1 or 2;
-	//Bediener always have to have a touch-sensitive skin;
+	//Bediener always has to have a touch-sensitive skin;
 	//subtype of android is implicitly given by software;
 
 	void attachSoftware(SoftwareHilfskraefte s) {
@@ -20,12 +20,6 @@ public class Bediener extends Android {
 		//s != null;
 		s.attachToBediener(this);
 		//SoftwareGesellschafter s has been attached to Bediener
-	}
-
-	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {
-		//skin != null;
-		skin.attachToBediener(this);
-		//touch-sensitive skin has been attached to Bediener;
 	}
 
 	public void attachSoftwareLevel1(SoftwareLevel1 software) {
@@ -52,21 +46,19 @@ public class Bediener extends Android {
 			//software has been changed
 
 	}
-	
-	//!?Bediener darf doch nur eine berührungssensitive skin haben!?
-	public void attachSkinGepanzert(SkinGepanzert skin) {
-		//skin != null;
-		skin.attachToBediener(this);
-	}
 
+	@Override
 	public void attachSkinHochfest(SkinHochfest skin) {
 		//skin != null;
 		skin.attachToBediener(this); 
+		//high-strength skin has been attached to Bediener
 	}
 
-	public void attachSkinBeruehrungssensiv(SkinGepanzert skin) {
+	@Override
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {
 		//skin != null;
 		skin.attachToBediener(this); 
+		//touch-sensitive skin has been attached to Bediener;
 	}
 
 }
