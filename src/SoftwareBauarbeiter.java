@@ -6,12 +6,18 @@
  * 
  */
 public class SoftwareBauarbeiter extends SoftwareLevel4 {
+	//subtype of android is implicitly given by software;
+	
 	@Override	
 	void attachToSchwerarbeiter(Schwerarbeiter a) {
+		//a != null;
 		a.attachSoftwareLevel4(this);
+		//software has been attached to Schwerarbeiter
 	}
+	
 	public String toString () {
 		return "SoftwareBauarbeiter";
+		//returns a string of type of software/subtype of android
 	}
 
 }

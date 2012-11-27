@@ -6,6 +6,8 @@
  * 
  */
 public abstract class Android {
+	//subtype of android is implicitly given by software;
+	
 	private static Integer cSnr = 0;
 	protected final Integer snr;
 	private String log;
@@ -23,60 +25,82 @@ public abstract class Android {
 	public void attachSkinBeruehrungssensiv(SkinBeruehrungssensitiv skin) {}
 
 	public Android() {
+		//snr cannot be changed after initializing;
 		this.snr = ++cSnr;
 		log = "";
 	}
 
 	protected void addToLog(String logentry) {
+		//logentry != null;
 		log += logentry + "\n";
+		//logentry has been added to log
 	}
 
 	public String getLog() {
 		return log;
+		//returns log
 	}
 
 	public Integer getSnr() {
 		return snr;
+		//returns serial number
 	}
 
 	public void attachAfterCheck(SoftwareLevel1 s) {
+		//s != null;
 		this.software = s;
 		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString());
+		addToLog("Changed Software to: " + s.toString()); //add logentry
 		// set power here
+		
+		//software got changed
 	}
 
 	public void attachAfterCheck(SoftwareLevel2 s) {
+		//s != null;
 		this.software = s;
 		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString());
+		addToLog("Changed Software to: " + s.toString()); //add logentry
 		// set power here
+		
+		//software got changed
 	}
 
 	public void attachAfterCheck(SoftwareLevel3 s) {
+		//s != null;
 		this.software = s;
 		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString());
+		addToLog("Changed Software to: " + s.toString()); //add logentry
 		// set power here
+		
+		//software got changed
 	}
 
 	public void attachAfterCheck(SoftwareLevel4 s) {
+		//s != null;
 		this.software = s;
 		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString());
+		addToLog("Changed Software to: " + s.toString()); //add logentry
 		// set power here
+		
+		//software got changed
 	}
 
 	public void attachAfterCheck(SoftwareLevel5 s) {
+		//s != null;
 		this.software = s;
 		s.setSnr(snr);
-		addToLog("Changed Software to: " + s.toString());
+		addToLog("Changed Software to: " + s.toString()); //add logentry
 		// set power here
+		
+		//software got changed
 	}
 
 	public void attachAfterCheck(Skin s) {
+		//s != null;
 		this.skin = s;
 		s.setSnr(snr);
-		addToLog("Changed Skin to: " + s.toString());
+		addToLog("Changed Skin to: " + s.toString()); //add logentry
+		//skin got changed
 	}
 }

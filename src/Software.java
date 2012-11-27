@@ -6,14 +6,16 @@
  * 
  */
 public class Software extends AndroidPart {
-	void attachToBediener(Bediener a) {}
-	void attachToBeschuetzer(Beschuetzer a) {}
-	void attachToSchwerarbeiter(Schwerarbeiter a) {}
+	//subtype of android is implicitly given by software;
+	
+	void attachToBediener(Bediener a) {}			 //a != null;
+	void attachToBeschuetzer(Beschuetzer a) {}		 //a != null;
+	void attachToSchwerarbeiter(Schwerarbeiter a) {} //a != null;
 
-	void checkLevel1(Android a, SoftwareLevel1 s) {}
-	void checkLevel2(Android a, SoftwareLevel2 s) {}
-	void checkLevel3(Android a, SoftwareLevel3 s) {}
-	void checkLevel4(Android a, SoftwareLevel4 s) {}
-	void checkLevel5(Android a, SoftwareLevel5 s) {}
+	void checkLevel1(Android a, SoftwareLevel1 s) {} //a != null; s != null;
+	void checkLevel2(Android a, SoftwareLevel2 s) {} //a != null; s != null;
+	void checkLevel3(Android a, SoftwareLevel3 s) {} //a != null; s != null;
+	void checkLevel4(Android a, SoftwareLevel4 s) {} //a != null; s != null;
+	void checkLevel5(Android a, SoftwareLevel5 s) {} //a != null; s != null;
 
 }
