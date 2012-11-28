@@ -19,7 +19,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nSchwerarbeiter/Bauarbeiter:\n");
 
-		Schwerarbeiter schwer1 = new Schwerarbeiter();
+		Android schwer1 = new Schwerarbeiter();
 		schwer1.attachSoftware(new SoftwareBauarbeiter());	//can be attached
 		System.out.println(list.insert(schwer1) + "\n"); 	//try to send out incomplete android (only with software)
 		schwer1.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
@@ -34,7 +34,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nSchwerarbeiter/Transportarbeiter:\n");
 
-		Schwerarbeiter schwer2 = new Schwerarbeiter();
+		Android schwer2 = new Schwerarbeiter();
 		schwer2.attachSoftware(new SoftwareTransportarbeiter()); //can be attached
 		schwer2.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		schwer2.attachSkinGepanzert(new SkinGepanzert());	//cannot be attached
@@ -49,7 +49,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nSchwerarbeiter/ServiceTechniker:\n");
 
-		Schwerarbeiter schwer3 = new Schwerarbeiter();
+		Android schwer3 = new Schwerarbeiter();
 		schwer3.attachSoftware(new SoftwareServiceTechniker());//can be attached
 		schwer3.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		schwer3.attachSkinGepanzert(new SkinGepanzert());		//cannot be attached
@@ -63,7 +63,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nBeschuetzer/Kaempfer:\n");
 
-		Beschuetzer besch1 = new Beschuetzer();
+		Android besch1 = new Beschuetzer();
 		besch1.attachSoftware(new SoftwareKaempfer()); //can be attached
 		besch1.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		besch1.attachSkinGepanzert(new SkinGepanzert());		//can be attached
@@ -77,7 +77,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nBeschuetzer/Leibwaechter:\n");
 
-		Beschuetzer besch2 = new Beschuetzer();
+		Android besch2 = new Beschuetzer();
 		besch2.attachSoftware(new SoftwareLeibwaechter()); //can be attached
 		besch2.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		besch2.attachSkinGepanzert(new SkinGepanzert());		//can be attached
@@ -91,7 +91,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nBeschuetzer/Objektbewacher:\n");
 
-		Beschuetzer besch3 = new Beschuetzer();
+		Android besch3 = new Beschuetzer();
 		besch3.attachSoftware(new SoftwareObjektbewacher()); //can be attached
 		besch3.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		besch3.attachSkinGepanzert(new SkinGepanzert());		//can be attached
@@ -105,7 +105,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nBediener/Gesellschafter:\n");
 
-		Bediener bed1 = new Bediener();
+		Android bed1 = new Bediener();
 		bed1.attachSoftware(new SoftwareGesellschafter());//can be attached
 		bed1.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		bed1.attachSkinGepanzert(new SkinGepanzert());		//cannot be attached
@@ -119,7 +119,7 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nBediener/Hilfskraefte:\n");
 
-		Bediener bed2 = new Bediener();
+		Android bed2 = new Bediener();
 		bed2.attachSoftware(new SoftwareHilfskraefte());//can be attached
 		bed2.attachSkinBeruehrungssensitiv(new SkinBeruehrungssensitiv()); //can be attached
 		bed2.attachSkinGepanzert(new SkinGepanzert());		//cannot be attached
@@ -133,15 +133,15 @@ public class Test {
 
 		System.out.println("-----------------------------------------------\nTry to attach wrong Software to android:\n");
 
-		Schwerarbeiter schwer4 = new Schwerarbeiter();
+		Android schwer4 = new Schwerarbeiter();
 		schwer4.attachSoftware(new SoftwareLeibwaechter());		//cannot be attached
 		System.out.println(schwer4.getCurrentParts());			//no Software will be displayed
 
-		Beschuetzer besch4 = new Beschuetzer();
+		Android besch4 = new Beschuetzer();
 		besch4.attachSoftware(new SoftwareHilfskraefte());		//cannot be attached
 		System.out.println(besch4.getCurrentParts());			//no Software will be displayed
 
-		Bediener bed3 = new Bediener();
+		Android bed3 = new Bediener();
 		bed3.attachSoftware(new SoftwareObjektbewacher());		//cannot be attached
 		System.out.println(bed3.getCurrentParts());				//no Software will be displayed
 
@@ -155,7 +155,7 @@ public class Test {
 		System.out.println("\n-----------------------------------------------\nTry to swap the subtypes (control security level):\n");
 
 		System.out.println("--Schwerarbeiter:\n");
-		Schwerarbeiter schwer5 = new Schwerarbeiter(); //create new Schwerarbeiter
+		Android schwer5 = new Schwerarbeiter(); //create new Schwerarbeiter
 		
 		schwer5.attachSoftware(new SoftwareBauarbeiter());		//attach Bauarbeiter software
 		System.out.println(schwer5.getCurrentParts());			//possible because security level = 4
@@ -167,7 +167,7 @@ public class Test {
 		System.out.println(schwer5.getCurrentParts() + "\n");			//not possible because security level = 4
 		
 		System.out.println("--Beschuetzer:\n");
-		Beschuetzer besch5 = new Beschuetzer();
+		Android besch5 = new Beschuetzer();
 		
 		besch5.attachSoftware(new SoftwareObjektbewacher());	//attach Objektbewacher software
 		System.out.println(besch5.getCurrentParts());			//possible because security level = 4
@@ -179,7 +179,7 @@ public class Test {
 		System.out.println(besch5.getCurrentParts() + "\n");	//not possible because security level = 5
 		
 		System.out.println("--Bediener:\n");
-		Bediener bed4 = new Bediener();
+		Android bed4 = new Bediener();
 		
 		bed4.attachSoftware(new SoftwareGesellschafter());		//attach Gesellschafter software
 		System.out.println(bed4.getCurrentParts());				//possible because security level = 1
