@@ -134,12 +134,12 @@ public class Test {
 		System.out.println("-----------------------------------------------\nTry to attach wrong Software to android:\n");
 
 		Schwerarbeiter schwer4 = new Schwerarbeiter();
-		schwer4.attachSoftware(new SoftwareLeibwaechter());			//cannot be attached
-		System.out.println(schwer4.getCurrentParts());				//no Software will be displayed
+		schwer4.attachSoftware(new SoftwareLeibwaechter());		//cannot be attached
+		System.out.println(schwer4.getCurrentParts());			//no Software will be displayed
 
 		Beschuetzer besch4 = new Beschuetzer();
-		besch4.attachSoftware(new SoftwareHilfskraefte());			//cannot be attached
-		System.out.println(besch4.getCurrentParts());				//no Software will be displayed
+		besch4.attachSoftware(new SoftwareHilfskraefte());		//cannot be attached
+		System.out.println(besch4.getCurrentParts());			//no Software will be displayed
 
 		Bediener bed3 = new Bediener();
 		bed3.attachSoftware(new SoftwareObjektbewacher());		//cannot be attached
@@ -152,12 +152,40 @@ public class Test {
 
 		System.out.println(list.find(100));	//find android with serial number 100, should be null
 		
-		System.out.println("\n-----------------------------------------------\nTry to swap the subtypes:\n");
+		System.out.println("\n-----------------------------------------------\nTry to swap the subtypes (control security level):\n");
 
-		//TODO
+		System.out.println("--Schwerarbeiter:\n");
+		Schwerarbeiter schwer5 = new Schwerarbeiter(); //create new Schwerarbeiter
 		
-		System.out.println("\n-----------------------------------------------\nControl the security levels:\n");
-
-		//TODO
+		schwer5.attachSoftware(new SoftwareBauarbeiter());		//attach Bauarbeiter software
+		System.out.println(schwer5.getCurrentParts());			//possible because security level = 4
+		
+		schwer5.attachSoftware(new SoftwareTransportarbeiter());//attach Transportarbeiter software
+		System.out.println(schwer5.getCurrentParts());			//possible because security level = 4
+		
+		schwer5.attachSoftware(new SoftwareServiceTechniker()); //attach ServiceTechniker software
+		System.out.println(schwer5.getCurrentParts() + "\n");			//not possible because security level = 4
+		
+		System.out.println("--Beschuetzer:\n");
+		Beschuetzer besch5 = new Beschuetzer();
+		
+		besch5.attachSoftware(new SoftwareObjektbewacher());	//attach Objektbewacher software
+		System.out.println(besch5.getCurrentParts());			//possible because security level = 4
+		
+		besch5.attachSoftware(new SoftwareLeibwaechter());		//attach Leibwaechter software
+		System.out.println(besch5.getCurrentParts());			//possible because security level = 4
+		
+		besch5.attachSoftware(new SoftwareKaempfer()); 			//attach Kaempfer software
+		System.out.println(besch5.getCurrentParts() + "\n");	//not possible because security level = 5
+		
+		System.out.println("--Bediener:\n");
+		Bediener bed4 = new Bediener();
+		
+		bed4.attachSoftware(new SoftwareGesellschafter());		//attach Gesellschafter software
+		System.out.println(bed4.getCurrentParts());				//possible because security level = 1
+		
+		bed4.attachSoftware(new SoftwareHilfskraefte());		//attach Hilfskraefte software
+		System.out.println(bed4.getCurrentParts());				//possible because security level = 1
+		
 	}
 }
