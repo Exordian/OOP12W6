@@ -48,14 +48,8 @@ public class Bediener extends Android {
 	}
 
 	@Override
-	public void attachSkinHochfest(SkinHochfest skin) {
-		//skin != null;
-		skin.attachToBediener(this); 
-		//high-strength skin has been attached to Bediener
-	}
-
-	@Override
 	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {
+		//Bediener has to have a Beruehrungssensitiv skin
 		//skin != null;
 		skin.attachToBediener(this); 
 		//touch-sensitive skin has been attached to Bediener;

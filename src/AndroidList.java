@@ -8,21 +8,26 @@ import java.util.TreeMap;
  */
 public class AndroidList extends TreeMap<Integer, Android> {
 	//Map is sorted because of TreeMap
-	
+
 	public String insert(Android a) {
 		//a != null;
 		if(a.getKit() == null || a.getSkin() == null || a.getSoftware() == null) {
 			//android not complete
-			return "Android " + a.getSnr() + " not sent out";
+			return "Incomplete android " + a.getSnr() + " not sent out";
 		}
 		this.put(a.getSnr(), a);
-		return "Android " + a.getSnr() + " sent out";
+		return "Complete android " + a.getSnr() + " sent out";
 		//returns 1 if android has been added to androidList, -1 if not
 	}
 
-	public Android find(Integer i) {
+	public String find(Integer i) {
 		//i != null;
-		return this.get(i);
+		if (this.get(i) == null) {
+			return null;
+		} else {
+			return "Android: " + this.get(i).getSnr() + " (Attachments: Software: " + this.get(i).getSoftware()
+					+ ", Skin: " + this.get(i).getSkin() + ", Kit: "  + this.get(i).getKit() + ")";
+		}
 		//returns: -if i is in treemap: android with serial number i
 		//		   -else: 				null
 	}

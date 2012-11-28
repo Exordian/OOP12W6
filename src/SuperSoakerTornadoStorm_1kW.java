@@ -5,11 +5,11 @@
  * @since November 2012
  * 
  */
-public class SuperSoakerVortexPyragon extends KitUnlimited {
-	// soak the whole friggin' world!
+public class SuperSoakerTornadoStorm_1kW extends KitBelow1kW {
+	// soak a bit!
 	
 	public String toString () {
-		return "SuperSoakerVortexPyragon";
+		return "SuperSoakerTornadoStorm_1kW";
 		//returns a string of type of kit of android
 	}
 }

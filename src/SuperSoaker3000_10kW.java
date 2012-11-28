@@ -5,11 +5,11 @@
  * @since November 2012
  * 
  */
-public class SuperSoaker3000 extends KitBelow10kW {
+public class SuperSoaker3000_10kW extends KitBelow10kW {
 	// soak everything !
 	
 	public String toString () {
-		return "SuperSoaker3000";
+		return "SuperSoaker3000_10kW";
 		//returns a string of type of kit of android
 	}
 }

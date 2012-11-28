@@ -21,35 +21,45 @@ public abstract class Android {
 	public void attachSoftwareLevel4(SoftwareLevel4 software) {}
 	public void attachSoftwareLevel5(SoftwareLevel5 software) {}
 
-	// ask software if kit is legit
+	void attachSoftware(SoftwareHilfskraefte s) {}
+	void attachSoftware(SoftwareGesellschafter g) {}
+	void attachSoftware(SoftwareBauarbeiter b) {}
+	void attachSoftware(SoftwareServiceTechniker k) {}
+	void attachSoftware(SoftwareTransportarbeiter t) {}
+	void attachSoftware(SoftwareObjektbewacher o) {}
+	void attachSoftware(SoftwareLeibwaechter l) {}
+	void attachSoftware(SoftwareKaempfer k) {}
+
+	public void attachSkinGepanzert(SkinGepanzert skin) {}
+	public void attachSkinHochfest(SkinHochfest skin) {}
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {}
+
+	//ask software (due to the implicit softwareLevel which contains the
+	//information about the usable power) if it is valid to attach this kit
 	public void attachKit(KitBelow1kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to software
+		//attached kit to android
 	}
 	public void attachKit(KitBelow5kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to software
+		//attached kit to android
 	}
 	public void attachKit(KitBelow10kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to software
+		//attached kit to android
 	}
 	public void attachKit(KitUnlimited kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to software
+		//attached kit to android
 	}
-
-	public void attachSkinGepanzert(SkinGepanzert skin) {}
-	public void attachSkinHochfest(SkinHochfest skin) {}
-	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {}
 
 	public Android() {
 		//snr cannot be changed after initializing;
@@ -86,6 +96,12 @@ public abstract class Android {
 	public Software getSoftware() {
 		return this.software;
 		//returns the software of this android
+	}
+	
+	public String getCurrentParts() {
+		return "Attachments: Software: " + this.getSoftware()
+				+ ", Skin: " + this.getSkin() + ", Kit: "  + this.getKit();
+		//returns the current parts of this android
 	}
 
 	public void attachAfterCheck(Software s) {
