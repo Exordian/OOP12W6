@@ -15,21 +15,23 @@ public abstract class Android {
 	protected Skin skin = null;
 	protected Kit kit = null;
 
-	public void attachSoftwareLevel1(SoftwareLevel1 software) {}
-	public void attachSoftwareLevel2(SoftwareLevel2 software) {}
-	public void attachSoftwareLevel3(SoftwareLevel3 software) {}
-	public void attachSoftwareLevel4(SoftwareLevel4 software) {}
-	public void attachSoftwareLevel5(SoftwareLevel5 software) {}
+	void attachSoftwareLevel1(SoftwareLevel1 software) {}
+	void attachSoftwareLevel2(SoftwareLevel2 software) {}
+	void attachSoftwareLevel3(SoftwareLevel3 software) {}
+	void attachSoftwareLevel4(SoftwareLevel4 software) {}
+	void attachSoftwareLevel5(SoftwareLevel5 software) {}
 
-	void attachSoftware(SoftwareHilfskraefte s) {}
-	void attachSoftware(SoftwareGesellschafter g) {}
-	void attachSoftware(SoftwareBauarbeiter b) {}
-	void attachSoftware(SoftwareServiceTechniker k) {}
-	void attachSoftware(SoftwareTransportarbeiter t) {}
-	void attachSoftware(SoftwareObjektbewacher o) {}
-	void attachSoftware(SoftwareLeibwaechter l) {}
-	void attachSoftware(SoftwareKaempfer k) {}
+	//must be usable from outside the package (even though we are not allowed to use packages)
+	public void attachSoftware(SoftwareHilfskraefte s) {}
+	public void attachSoftware(SoftwareGesellschafter g) {}
+	public void attachSoftware(SoftwareBauarbeiter b) {}
+	public void attachSoftware(SoftwareServiceTechniker k) {}
+	public void attachSoftware(SoftwareTransportarbeiter t) {}
+	public void attachSoftware(SoftwareObjektbewacher o) {}
+	public void attachSoftware(SoftwareLeibwaechter l) {}
+	public void attachSoftware(SoftwareKaempfer k) {}
 
+	//must be usable from outside the package (even though we are not allowed to use packages)
 	public void attachSkinGepanzert(SkinGepanzert skin) {}
 	public void attachSkinHochfest(SkinHochfest skin) {}
 	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {}
@@ -97,36 +99,34 @@ public abstract class Android {
 		return this.software;
 		//returns the software of this android
 	}
-	
+
 	public String getCurrentParts() {
 		return "Attachments: Software: " + this.getSoftware()
 				+ ", Skin: " + this.getSkin() + ", Kit: "  + this.getKit();
 		//returns the current parts of this android
 	}
 
-	public void attachAfterCheck(Software s) {
+	void attachAfterCheck(Software s) {
 		//s != null;
 		this.software = s;
 		s.setSnr(snr);
 		addToLog("Changed Software to: " + s.toString()); //add logentry
-		//software got changed
+		//software was attached and parts' serialnumber is now the androids serialnumber
 	}
 
-	public void attachAfterCheck(Kit k) {
+	void attachAfterCheck(Kit k) {
 		//s != null;
 		this.kit = k;
 		k.setSnr(snr);
 		addToLog("Kit attached: " + k.toString()); //add logentry
-		// set power here
-
-		//software got changed
+		//kit was attached and parts' serialnumber is now the androids serialnumber
 	}
 
-	public void attachAfterCheck(Skin s) {
+	void attachAfterCheck(Skin s) {
 		//s != null;
 		this.skin = s;
 		s.setSnr(snr);
 		addToLog("Changed Skin to: " + s.toString()); //add logentry
-		//skin got changed
+		//skin was attached and parts' serialnumber is now the androids serialnumber
 	}
 }

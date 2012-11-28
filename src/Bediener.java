@@ -6,24 +6,23 @@
  * 
  */
 public class Bediener extends Android {
-	//Bediener only can have software level of either 1 or 2;
+	//Bediener can only have software level 1 or 2;
 	//Bediener always has to have a touch-sensitive skin;
 	//subtype of android is implicitly given by software;
 
-	void attachSoftware(SoftwareHilfskraefte s) {
+	public void attachSoftware(SoftwareHilfskraefte s) {
 		//s != null;
 		s.attachToBediener(this);
 		//SoftwareHilfskraefte s has been attached to Bediener
 	}
 
-	void attachSoftware(SoftwareGesellschafter s) {
+	public void attachSoftware(SoftwareGesellschafter s) {
 		//s != null;
 		s.attachToBediener(this);
 		//SoftwareGesellschafter s has been attached to Bediener
 	}
 
-	public void attachSoftwareLevel1(SoftwareLevel1 software) {
-		//Bediener only can have software level of either 1 or 2;
+	void attachSoftwareLevel1(SoftwareLevel1 software) {
 		//software != null;
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString()); //add logentry
@@ -34,8 +33,7 @@ public class Bediener extends Android {
 			//software has been changed
 	}
 
-	public void attachSoftwareLevel2(SoftwareLevel2 software) {
-		//Bediener only can have software level of either 1 or 2;
+	void attachSoftwareLevel2(SoftwareLevel2 software) {
 		//software != null;
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString()); //add logentry

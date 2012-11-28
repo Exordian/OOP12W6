@@ -7,17 +7,12 @@
  */
 public class SoftwareLevel1 extends Software {
 	//subtype of android is implicitly given by software;
-	
+
 	@Override	
 	void checkLevel1(Android a, SoftwareLevel1 s) {
 		//a != null; s != null;
 		a.attachAfterCheck(s);
 		//software has been set/changed
-	}
-	
-	public String toString () {
-		return "SoftwareLevel1";
-		//returns a string of type of software level
 	}
 
 	void attachKit(KitBelow1kW kit, Android a) {
@@ -26,4 +21,8 @@ public class SoftwareLevel1 extends Software {
 		//attaches kit to android
 	}
 
+	public String toString () {
+		return "SoftwareLevel1";
+		//returns a string of type of software level
+	}
 }

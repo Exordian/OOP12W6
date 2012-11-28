@@ -6,7 +6,7 @@
  * 
  */
 public class SkinBeruehrungssensitiv extends Skin {
-	//Bediener always have to have a touch-sensitive skin;
+	//Bediener always have to have a touch-sensitive skin
 		
 	@Override
 	void attachToBediener(Bediener a) {

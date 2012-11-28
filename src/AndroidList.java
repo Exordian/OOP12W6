@@ -25,10 +25,9 @@ public class AndroidList extends TreeMap<Integer, Android> {
 		if (this.get(i) == null) {
 			return null;
 		} else {
-			return "Android: " + this.get(i).getSnr() + " (Attachments: Software: " + this.get(i).getSoftware()
-					+ ", Skin: " + this.get(i).getSkin() + ", Kit: "  + this.get(i).getKit() + ")";
+			return "Android: " + this.get(i).getSnr() + " (" + this.get(i).getCurrentParts() + ")";
 		}
-		//returns: -if i is in treemap: android with serial number i
+		//returns: -if i is in treemap: android with serial number i and his attachments
 		//		   -else: 				null
 	}
 

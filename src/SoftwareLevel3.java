@@ -15,11 +15,6 @@ public class SoftwareLevel3 extends Software {
 		//software has been set/changed
 	}
 
-	public String toString () {
-		return "SoftwareLevel3";
-		//returns a string of type of software level
-	}
-
 	void attachKit(KitBelow1kW kit, Android a) {
 		a.attachAfterCheck(kit);
 	}
@@ -30,4 +25,8 @@ public class SoftwareLevel3 extends Software {
 		//attaches kit to android
 	}
 
+	public String toString () {
+		return "SoftwareLevel3";
+		//returns a string of type of software level
+	}
 }

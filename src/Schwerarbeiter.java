@@ -6,30 +6,30 @@
  * 
  */
 public class Schwerarbeiter extends Android {
-	//Schwerarbeiter only can have software level of 3 and 4;
+	//Schwerarbeiter can only have software level 3 and 4
 	//subtype of android is implicitly given by software;
 
-	void attachSoftware(SoftwareBauarbeiter s) {
+	public void attachSoftware(SoftwareBauarbeiter s) {
 		//s != null;
 		s.attachToSchwerarbeiter(this);
 		//SoftwareBauarbeiter s has been attached to Schwerarbeiter;
 	}
 
-	void attachSoftware(SoftwareServiceTechniker s) {
+	public void attachSoftware(SoftwareServiceTechniker s) {
 		//s != null;
 		s.attachToSchwerarbeiter(this);
 		//SoftwareServiceTechniker s has been attached to Schwerarbeiter;
 	}
 
-	void attachSoftware(SoftwareTransportarbeiter s) {
+	public void attachSoftware(SoftwareTransportarbeiter s) {
 		//s != null;
 		s.attachToSchwerarbeiter(this);
 		//SoftwareTransportarbeiter s has been attached to Schwerarbeiter;
 	}
 
 	@Override
-	public void attachSoftwareLevel3(SoftwareLevel3 software) {
-		//Schwerarbeiter only can have software level of 3 and 4;
+	void attachSoftwareLevel3(SoftwareLevel3 software) {
+		//Schwerarbeiter can only have software level 3 and 4
 		//software != null;
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString()); //add logentry
@@ -42,8 +42,8 @@ public class Schwerarbeiter extends Android {
 	}
 	
 	@Override
-	public void attachSoftwareLevel4(SoftwareLevel4 software) {
-		//Schwerarbeiter only can have software level of 3 and 4;
+	void attachSoftwareLevel4(SoftwareLevel4 software) {
+		//Schwerarbeiter can only have software level 3 and 4
 		//software != null;
 		if(this.software == null) {
 			addToLog("Software set to: " + software.toString()); //add logentry

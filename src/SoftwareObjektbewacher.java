@@ -6,7 +6,7 @@
  * 
  */
 public class SoftwareObjektbewacher extends SoftwareLevel4 {
-	//subtype of android is implicitly given by software;
+	//subtype of android is implicitly given by software
 	
 	@Override	
 	void attachToBeschuetzer(Beschuetzer a) {

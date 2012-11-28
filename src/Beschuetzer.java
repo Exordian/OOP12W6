@@ -8,29 +8,29 @@
 public class Beschuetzer extends Android {
 	//Beschützer must have a software level of 4, 
 	//except for Kämpfer who must have a software level of 5;
-	//Beschützer must have an armored skin;
+	//Beschützer must be able to have an armored skin;
 	//subtype of android is implicitly given by software;
 
-	void attachSoftware(SoftwareLeibwaechter s) {
+	public void attachSoftware(SoftwareLeibwaechter s) {
 		//s != null;
 		s.attachToBeschuetzer(this);
 		//SoftwareLeibwaechter s has been attached to Beschuetzer
 	}
 
-	void attachSoftware(SoftwareKaempfer s) {
+	public void attachSoftware(SoftwareKaempfer s) {
 		//s != null;
 		s.attachToBeschuetzer(this);
 		//SoftwareKaempfer s has been attached to Beschuetzer
 	}
 
-	void attachSoftware(SoftwareObjektbewacher s) {
+	public void attachSoftware(SoftwareObjektbewacher s) {
 		//s != null;
 		s.attachToBeschuetzer(this);
 		//SoftwareObjektbewacher s has been attached to Beschuetzer
 	}
 	
 	@Override	
-	public void attachSoftwareLevel4(SoftwareLevel4 software) {
+	void attachSoftwareLevel4(SoftwareLevel4 software) {
 		//Beschützer must have a software level of 4,
 		//except for Kämpfer who must have a software level of 5;
 		//software != null;
@@ -45,7 +45,7 @@ public class Beschuetzer extends Android {
 	}
 	
 	@Override
-	public void attachSoftwareLevel5(SoftwareLevel5 software) {
+	void attachSoftwareLevel5(SoftwareLevel5 software) {
 		//Kämpfer must have a software level of 5;
 		//software != null;
 		if(this.software == null) {
