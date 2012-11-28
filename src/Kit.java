@@ -6,8 +6,8 @@
  * 
  */
 public abstract class Kit extends AndroidPart {
-	void attachKitBelow1kW(Android a) {};
-	void attachKitBelow5kW(Android a) {};
-	void attachKitBelow10kW(Android a) {};
-	void attachKitUnlimited(Android a) {};
+	void attachKitBelow1kW(Android a) {};	//a != null;
+	void attachKitBelow5kW(Android a) {};	//a != null;
+	void attachKitBelow10kW(Android a) {};	//a != null;
+	void attachKitUnlimited(Android a) {};	//a != null;
 }

@@ -18,7 +18,7 @@ public class SoftwareLevel2 extends Software {
 	void attachKit(KitBelow1kW kit, Android a) {
 		//kit != null, a != null
 		a.attachAfterCheck(kit);
-		//attaches kit to android
+		//kit has been attached to android
 	}
 
 	public String toString () {

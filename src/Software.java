@@ -18,9 +18,9 @@ public class Software extends AndroidPart {
 	void checkLevel4(Android a, SoftwareLevel4 s) {} //a != null; s != null;
 	void checkLevel5(Android a, SoftwareLevel5 s) {} //a != null; s != null;
 
-	void attachKit(KitBelow1kW kit, Android a) {}
-	void attachKit(KitBelow5kW kit, Android a) {}
-	void attachKit(KitBelow10kW kit, Android a) {}
-	void attachKit(KitUnlimited kit, Android a) {}
+	void attachKit(KitBelow1kW kit, Android a) {}	 //kit != null; a != null;
+	void attachKit(KitBelow5kW kit, Android a) {}	 //kit != null; a != null;
+	void attachKit(KitBelow10kW kit, Android a) {}	 //kit != null; a != null;
+	void attachKit(KitUnlimited kit, Android a) {}	 //kit != null; a != null;
 	
 }

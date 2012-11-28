@@ -15,26 +15,26 @@ public abstract class Android {
 	protected Skin skin = null;
 	protected Kit kit = null;
 
-	void attachSoftwareLevel1(SoftwareLevel1 software) {}
-	void attachSoftwareLevel2(SoftwareLevel2 software) {}
-	void attachSoftwareLevel3(SoftwareLevel3 software) {}
-	void attachSoftwareLevel4(SoftwareLevel4 software) {}
-	void attachSoftwareLevel5(SoftwareLevel5 software) {}
+	void attachSoftwareLevel1(SoftwareLevel1 software) {}	//software != null;
+	void attachSoftwareLevel2(SoftwareLevel2 software) {}	//software != null;
+	void attachSoftwareLevel3(SoftwareLevel3 software) {}	//software != null;
+	void attachSoftwareLevel4(SoftwareLevel4 software) {}	//software != null;
+	void attachSoftwareLevel5(SoftwareLevel5 software) {}	//software != null;
 
 	//must be usable from outside the package (even though we are not allowed to use packages)
-	public void attachSoftware(SoftwareHilfskraefte s) {}
-	public void attachSoftware(SoftwareGesellschafter g) {}
-	public void attachSoftware(SoftwareBauarbeiter b) {}
-	public void attachSoftware(SoftwareServiceTechniker k) {}
-	public void attachSoftware(SoftwareTransportarbeiter t) {}
-	public void attachSoftware(SoftwareObjektbewacher o) {}
-	public void attachSoftware(SoftwareLeibwaechter l) {}
-	public void attachSoftware(SoftwareKaempfer k) {}
+	public void attachSoftware(SoftwareHilfskraefte s) {}		//s != null;
+	public void attachSoftware(SoftwareGesellschafter g) {}		//g != null;
+	public void attachSoftware(SoftwareBauarbeiter b) {}		//b != null;
+	public void attachSoftware(SoftwareServiceTechniker k) {}	//k != null;
+	public void attachSoftware(SoftwareTransportarbeiter t) {}	//t != null;
+	public void attachSoftware(SoftwareObjektbewacher o) {}		//o != null;
+	public void attachSoftware(SoftwareLeibwaechter l) {}		//l != null;
+	public void attachSoftware(SoftwareKaempfer k) {}			//k != null;
 
 	//must be usable from outside the package (even though we are not allowed to use packages)
-	public void attachSkinGepanzert(SkinGepanzert skin) {}
-	public void attachSkinHochfest(SkinHochfest skin) {}
-	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {}
+	public void attachSkinGepanzert(SkinGepanzert skin) {}		//skin != null;
+	public void attachSkinHochfest(SkinHochfest skin) {}		//skin != nulll;
+	public void attachSkinBeruehrungssensitiv(SkinBeruehrungssensitiv skin) {} //skin != null;
 
 	//ask software (due to the implicit softwareLevel which contains the
 	//information about the usable power) if it is valid to attach this kit
@@ -42,25 +42,25 @@ public abstract class Android {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to android
+		//kit has been attached to android
 	}
 	public void attachKit(KitBelow5kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to android
+		//kit has been attached to android
 	}
 	public void attachKit(KitBelow10kW kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to android
+		//kit has been attached to android
 	}
 	public void attachKit(KitUnlimited kit) {
 		if(kit == null || software == null)
 			return;
 		software.attachKit(kit, this);
-		//attached kit to android
+		//kit has been attached to android
 	}
 
 	public Android() {
